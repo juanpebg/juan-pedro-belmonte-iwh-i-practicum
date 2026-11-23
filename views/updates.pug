@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        link(rel="stylesheet" href="/css/style.css")
+    body
+        main
+            h1 Update Custom Object Form
+            p
+                a(href="/") Return to the homepage
+            if error
+                p.error(role="alert")= error
+            form(action="/update-cobj" method="POST")
+                label(for="name") Name
+                input(type="text" id="name" name="name" maxlength="200" required value=values.name)
+                label(for="species") Species
+                input(type="text" id="species" name="species" maxlength="200" required value=values.species)
+                label(for="light_level") Light level
+                input(type="text" id="light_level" name="light_level" maxlength="200" required value=values.light_level placeholder="low, medium or high")
+                input(type="submit" value="Create")
